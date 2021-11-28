@@ -1,0 +1,46 @@
+body {
+    padding: 125px 0px 0px 0px;
+    background-color: #1ed760;
+}
+
+.navbar {
+    background-color: #682a8f;
+}
+
+.imgLogo {
+    height: 100px;
+}
+
+.espaco{
+    padding: 20px;
+}
+
+h1{
+    color: white;
+}
+
+.btn{
+    background-color: #682a8f;
+}
+
+tr{
+    color: white;
+}
+
+th{
+    background-color: #682a8f;
+}
+
+.btn{
+    margin-bottom: 20px;
+}
+
+footer {
+    padding-top: 30px;
+    background-color: #682a8f;
+}
+
+a {
+    color: white;
+    font-size: 15pt;
+}
