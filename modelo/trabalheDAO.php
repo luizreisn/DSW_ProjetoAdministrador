@@ -3,7 +3,7 @@
         function buscarEmail($email, $conn){
             include_once('../visao/trabalhe.php');
 
-            $consulta = $conn -> query("SELECT * FROM trabalhe WHERE email = '%$email%'");
+            $consulta = $conn -> query("SELECT * FROM trabalhe WHERE email LIKE '%$email%'");
             $total_retornado = $consulta -> rowCount();
 
             echo "
