@@ -4,7 +4,7 @@
         function buscarEmail($email, $conn){
             include_once('../visao/contato.php');
 
-            $consulta = $conn -> query("SELECT * FROM contato WHERE email = '$email'");
+            $consulta = $conn -> query("SELECT * FROM contato WHERE email = '%$email%'");
             $total_retornado = $consulta -> rowCount();
 
             echo "
