@@ -20,7 +20,24 @@ h1{
 }
 
 .btn{
+    margin-bottom: 20px;
+}
+
+.btn-light {
+    color: white;
     background-color: #682a8f;
+}
+
+.sair{
+    width: 80px;
+    color: white;
+    font-size: 16pt;
+    margin-bottom: 0px;
+}
+
+.sair:hover{
+    color: white;
+    text-decoration: none;
 }
 
 tr{
@@ -29,10 +46,6 @@ tr{
 
 th{
     background-color: #682a8f;
-}
-
-.btn{
-    margin-bottom: 20px;
 }
 
 footer {

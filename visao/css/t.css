@@ -1,0 +1,59 @@
+body {
+    padding: 125px 0px 0px 0px;
+    background-color: #1ed760;
+}
+
+.navbar {
+    background-color: #682a8f;
+}
+
+.imgLogo {
+    height: 100px;
+}
+
+.espaco{
+    padding: 20px;
+}
+
+h1{
+    color: white;
+}
+
+.btn{
+    margin-bottom: 20px;
+}
+
+.btn-light {
+    color: white;
+    background-color: #682a8f;
+}
+
+.sair{
+    width: 80px;
+    color: white;
+    font-size: 16pt;
+    margin-bottom: 0px;
+}
+
+.sair:hover{
+    color: white;
+    text-decoration: none;
+}
+
+tr{
+    color: white;
+}
+
+th{
+    background-color: #682a8f;
+}
+
+footer {
+    padding-top: 30px;
+    background-color: #682a8f;
+}
+
+a {
+    color: white;
+    font-size: 15pt;
+}

@@ -1,0 +1,81 @@
+body {
+    padding: 125px 0px 0px 0px;
+    background-color: #1ed760;
+}
+
+.navbar {
+    background-color: #682a8f;
+}
+
+.imgLogo {
+    height: 100px;
+}
+
+.espaco{
+    padding: 20px;
+}
+
+h1{
+    color: white;
+}
+
+.btn{
+    margin-bottom: 20px;
+}
+
+.btn-light {
+    color: white;
+    background-color: #682a8f;
+}
+
+.sair{
+    width: 80px;
+    color: white;
+    font-size: 16pt;
+    margin-bottom: 0px;
+}
+
+.sair:hover{
+    color: white;
+    text-decoration: none;
+}
+
+tr{
+    color: white;
+}
+
+th{
+    background-color: #682a8f;
+}
+
+.titulo{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.formContato {
+    min-width: auto;
+    max-width: 500px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    color: white;
+    font-weight: bolder;
+}
+
+.formContato .btn{
+    margin: 20px;
+    width: 200px;
+}
+
+footer {
+    padding-top: 30px;
+    background-color: #682a8f;
+}
+
+a {
+    color: white;
+    font-size: 15pt;
+}
