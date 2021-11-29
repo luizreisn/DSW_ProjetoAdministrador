@@ -40,7 +40,7 @@
             <div class="col">
                 <form action="../controle/controleContato.php" method="POST">
                     <div class="input-group mt-3">
-                        <input type="email" class="form-control" name="email" placeholder="Buscar por E-Mail"
+                        <input type="text" class="form-control" name="email" placeholder="Buscar por E-Mail"
                             aria-label="Buscar por E-Mail" required>
                         <div class="input-group-append">
                             <input type="submit" name="buscarEmail" value="Buscar" class="btn btn-light">
@@ -57,6 +57,19 @@
                             aria-label="Buscar por nome" required>
                         <div class="input-group-append">
                             <input type="submit" name="buscarNome" value="Buscar" class="btn btn-light">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form action="../controle/controleContato.php" method="POST">
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" name="sobrenome" placeholder="Buscar por sobrenome"
+                            aria-label="Buscar por sobrenome" required>
+                        <div class="input-group-append">
+                            <input type="submit" name="buscarSobrenome" value="Buscar" class="btn btn-light">
                         </div>
                     </div>
                 </form>

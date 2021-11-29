@@ -42,7 +42,7 @@
             <div class="col">
                 <form action="../controle/controleTrabalhe.php" method="POST">
                     <div class="input-group mt-3">
-                        <input type="email" class="form-control" name="email" placeholder="Buscar por E-Mail"
+                        <input type="text" class="form-control" name="email" placeholder="Buscar por E-Mail"
                             aria-label="Buscar por E-Mail" required>
                         <div class="input-group-append">
                             <input type="submit" name="buscarEmail" value="Buscar" class="btn btn-light">
