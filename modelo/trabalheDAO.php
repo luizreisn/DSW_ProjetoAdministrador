@@ -1,10 +1,9 @@
 <?php
-    class ContatoDAO{
-
+    class TrabalheDAO{
         function buscarEmail($email, $conn){
-            include_once('../visao/contato.php');
+            include_once('../visao/trabalhe.php');
 
-            $consulta = $conn -> query("SELECT * FROM contato WHERE email = '$email'");
+            $consulta = $conn -> query("SELECT * FROM trabalhe WHERE email = '$email'");
             $total_retornado = $consulta -> rowCount();
 
             echo "
@@ -15,7 +14,7 @@
                 echo "
                 <script>
                     alert('Registro não encontrado!');
-                    window.location = '../visao/contato.php';
+                    window.location = '../visao/trabalhe.php';
                 </script>
                 ";
             }else{
@@ -25,10 +24,10 @@
                         <th>Id</th>
                         <th>Nome</th>
                         <th>Sobrenome</th>
+                        <th>Nascimento</th>
                         <th>Celular</th>
-                        <th>Telefone</th>
                         <th>E-Mail</th>
-                        <th>Mensagem</th>
+                        <th>Curriculo</th>
                         <th>Ações</th>
                     </tr>
                 ";
@@ -38,12 +37,12 @@
                         <td>".$linha['id']."</td>
                         <td>".$linha['nome']."</td>
                         <td>".$linha['sobrenome']."</td>
+                        <td>".$linha['nascimento']."</td>
                         <td>".$linha['celular']."</td>
-                        <td>".$linha['telefone']."</td>
                         <td>".$linha['email']."</td>
-                        <td>".$linha['mensagem']."</td>
+                        <td>".$linha['curriculo']."</td>
                         <td>
-                            <form method='POST' action='../controle/controleContato.php'>
+                            <form method='POST' action='../controle/controleTrabalhe.php'>
                                 <div class='d-flex justify-content-center'>
                                     <input class='btn btn-danger' type='submit' name='excluir' value='Excluir'>
                                 </div>
@@ -65,9 +64,9 @@
         }
 
         function buscarNome($nome, $conn){
-            include_once('../visao/contato.php');
+            include_once('../visao/trabalhe.php');
 
-            $consulta = $conn -> query("SELECT * FROM contato WHERE nome LIKE '%$nome%'");
+            $consulta = $conn -> query("SELECT * FROM trabalhe WHERE nome LIKE '%$nome%'");
             $total_retornado = $consulta -> rowCount();
 
             echo "
@@ -78,7 +77,7 @@
                 echo "
                 <script>
                     alert('Registro não encontrado!');
-                    window.location = '../visao/contato.php';
+                    window.location = '../visao/trabalhe.php';
                 </script>
                 ";
             }else{
@@ -88,10 +87,10 @@
                         <th>Id</th>
                         <th>Nome</th>
                         <th>Sobrenome</th>
+                        <th>Nascimento</th>
                         <th>Celular</th>
-                        <th>Telefone</th>
                         <th>E-Mail</th>
-                        <th>Mensagem</th>
+                        <th>Curriculo</th>
                         <th>Ações</th>
                     </tr>
                 ";
@@ -101,12 +100,75 @@
                         <td>".$linha['id']."</td>
                         <td>".$linha['nome']."</td>
                         <td>".$linha['sobrenome']."</td>
+                        <td>".$linha['nascimento']."</td>
                         <td>".$linha['celular']."</td>
-                        <td>".$linha['telefone']."</td>
                         <td>".$linha['email']."</td>
-                        <td>".$linha['mensagem']."</td>
+                        <td>".$linha['curriculo']."</td>
                         <td>
-                            <form method='POST' action='../controle/controleContato.php'>
+                            <form method='POST' action='../controle/controleTrabalhe.php'>
+                                <div class='d-flex justify-content-center'>
+                                    <input class='btn btn-danger' type='submit' name='excluir' value='Excluir'>
+                                </div>
+                                <div class='d-flex justify-content-center'>
+                                    <input type='hidden' name='id' value='".$linha['id']."'>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    ";
+                }
+                echo "
+                </tabel>
+                ";
+            }
+            echo "
+            </body>
+            ";
+        }
+
+        function buscarSobrenome($sobrenome, $conn){
+            include_once('../visao/trabalhe.php');
+
+            $consulta = $conn -> query("SELECT * FROM trabalhe WHERE sobrenome LIKE '%$sobrenome%'");
+            $total_retornado = $consulta -> rowCount();
+
+            echo "
+            <body class='container'>
+            ";
+
+            if($total_retornado === 0){
+                echo "
+                <script>
+                    alert('Registro não encontrado!');
+                    window.location = '../visao/trabalhe.php';
+                </script>
+                ";
+            }else{
+                echo "
+                <table class='table table-striped'>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Sobrenome</th>
+                        <th>Nascimento</th>
+                        <th>Celular</th>
+                        <th>E-Mail</th>
+                        <th>Curriculo</th>
+                        <th>Ações</th>
+                    </tr>
+                ";
+                while($linha = $consulta -> fetch(PDO::FETCH_ASSOC)){
+                    echo "
+                    <tr>
+                        <td>".$linha['id']."</td>
+                        <td>".$linha['nome']."</td>
+                        <td>".$linha['sobrenome']."</td>
+                        <td>".$linha['nascimento']."</td>
+                        <td>".$linha['celular']."</td>
+                        <td>".$linha['email']."</td>
+                        <td>".$linha['curriculo']."</td>
+                        <td>
+                            <form method='POST' action='../controle/controleTrabalhe.php'>
                                 <div class='d-flex justify-content-center'>
                                     <input class='btn btn-danger' type='submit' name='excluir' value='Excluir'>
                                 </div>
@@ -128,9 +190,9 @@
         }
 
         function listar($conn){
-            include_once('../visao/contato.php');
+            include_once('../visao/trabalhe.php');
 
-            $consulta = $conn -> query("SELECT * FROM contato");
+            $consulta = $conn -> query("SELECT * FROM trabalhe");
             $registros = $consulta -> rowCount();
 
             echo "
@@ -144,10 +206,10 @@
                         <th>Id</th>
                         <th>Nome</th>
                         <th>Sobrenome</th>
+                        <th>Nascimento</th>
                         <th>Celular</th>
-                        <th>Telefone</th>
                         <th>E-Mail</th>
-                        <th>Mensagem</th>
+                        <th>Curriculo</th>
                         <th>Ações</th>
                     </tr>
                 ";
@@ -157,12 +219,12 @@
                         <td>".$linha['id']."</td>
                         <td>".$linha['nome']."</td>
                         <td>".$linha['sobrenome']."</td>
+                        <td>".$linha['nascimento']."</td>
                         <td>".$linha['celular']."</td>
-                        <td>".$linha['telefone']."</td>
                         <td>".$linha['email']."</td>
-                        <td>".$linha['mensagem']."</td>
+                        <td>".$linha['curriculo']."</td>
                         <td>
-                            <form method='POST' action='../controle/controleContato.php'>
+                            <form method='POST' action='../controle/controleTrabalhe.php'>
                                 <div class='d-flex justify-content-center'>
                                     <input class='btn btn-danger' type='submit' name='excluir' value='Excluir'>
                                 </div>
@@ -178,33 +240,36 @@
                 </tabel>
                 ";
             }else{
-                echo "<script>
-                        alert('Não há registros!');
-                        window.location = '../visao/contato.php';
-                      </script>";
+                echo "
+                <script>
+                    alert('Registro não encontrado!');
+                    window.location = '../visao/trabalhe.php';
+                </script>
+                ";
             }
-
             echo "
             </body>
-            ";
+            ";            
         }
 
         function excluir($id, $conn){
             try{
-                $delete = $conn -> prepare("DELETE FROM contato WHERE id = $id");
+                $delete = $conn -> prepare("DELETE FROM trabalhe WHERE id = $id");
                 $delete -> execute();
                 echo "
                 <script>
                     alert('".$delete -> rowCount()." Registro deletado com sucesso!');
-                    window.location = '../visao/contato.php';
+                    window.location = '../visao/trabalhe.php';
                 </script>
                 ";
             }catch(PDOException $e){
-                echo "<script>
-                        alert('Erro ao remover o registro!');
-                        console.log(".$e -> getMessage().");
-                        window.location = '../visao/contato.php';
-                      </script>";
+                echo "
+                <script>
+                    alert('Erro ao remover o registro!');
+                    console.log(".$e -> getMessage().");
+                    window.location = '../visao/trabalhe.php';
+                </script>
+                ";
             }
         }
 
