@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
-    <link href="../visao/css/co.css" rel="stylesheet">
+    <link href="../visao/css/t.css" rel="stylesheet">
     <link rel="icon" href="../img/logo.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,26 +19,28 @@
             <a class="navbar-left"><img class="imgLogo" src="../img/logo.png" alt="Logo Cherno & Byl´s"></a>
             <div>
                 <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
                     <li class="nav-item"><a class="nav-link" href="../visao/home.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="../visao/perfil.php">Perfil</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="../visao/contato.php">Form Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../visao/trabalhe.php">Form Trabalhe</a></li>
-                    <form action="../controle/controleLogin.php" method="POST">
+                    <li class="nav-item"><a class="nav-link" href="../visao/contato.php">Form Contato</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="../visao/trabalhe.php">Form Trabalhe</a></li>
+                        <form action="../controle/controleLogin.php" method="POST">
                             <button type="submit" name="sair" id="sair" class="btn btn-link sair">Sair <i class="fas fa-sign-out-alt"></i></button>
-                    </form>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="espaco">
-        <h1 class="text-center">Formulários de Contato</h1>
+        <h1 class="text-center">Formulários de Trabalhe Conosco</h1>
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col">
-                <form action="../controle/controleContato.php" method="POST">
+                <form action="../controle/controleTrabalhe.php" method="POST">
                     <div class="input-group mt-3">
                         <input type="email" class="form-control" name="email" placeholder="Buscar por E-Mail"
                             aria-label="Buscar por E-Mail" required>
@@ -51,7 +53,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <form action="../controle/controleContato.php" method="POST">
+                <form action="../controle/controleTrabalhe.php" method="POST">
                     <div class="input-group mt-3">
                         <input type="text" class="form-control" name="nome" placeholder="Buscar por nome"
                             aria-label="Buscar por nome" required>
@@ -63,8 +65,21 @@
             </div>
         </div>
         <div class="row">
+            <div class="col">
+                <form action="../controle/controleTrabalhe.php" method="POST">
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" name="sobrenome" placeholder="Buscar por sobrenome"
+                            aria-label="Buscar por sobrenome" required>
+                        <div class="input-group-append">
+                            <input type="submit" name="buscarSobrenome" value="Buscar" class="btn btn-light">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
             <div class="col text-center">
-                <form action="../controle/controleContato.php" method="POST">
+                <form action="../controle/controleTrabalhe.php" method="POST">
                     <div class="form-group form-check-inline">
                         <div class="col text-center">
                             <input type="submit" name="listar" value="Listar todos os formulários" class="btn btn-light">
