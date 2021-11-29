@@ -14,6 +14,10 @@
         $contatoDAO -> buscarNome($_POST["nome"], $conn);
     }
 
+    if(isset($_POST["buscarSobrenome"])){
+        $contatoDAO -> buscarSobrenome($_POST["sobrenome"], $conn);
+    }
+
     if(isset($_POST["listar"])){
         $contatoDAO -> listar($conn);
     }
